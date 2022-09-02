@@ -231,20 +231,23 @@ async def bots(client, message):
     await asyncio.sleep(e.value)
 
 @teletips.on_message(filters.command("start") & filters.private)
-async def start(client, message):
-  text = f'''
-Hi!! {message.from_user.mention},
+async def strt(client, message: Message):
+    user_id = message.chat.id
+    link = InlineKeyboardMarkup([
+                [
+                    InlineKeyboardButton(
+                        text="➕ Add me to your group",
+                        url= f"https://telegram.me/MikuMentionAll_bot?startgroup=true",
+                        )
+                ]])                 
+    img = "https://i.ibb.co/8PwqGQT/image-89.png"
+    txt = '''Hi!! {message.from_user.mention},
 **I'm Miku A Simple Mention All Bot.** I can help you to get everyone's attention by mentioning all members in your chat.
 I have some additional cool features and also I can work in channels.
 
 📜 __Click__ **/help** __for more information__
 '''
-  reply_markup=InlineKeyboardMarkup(
-            [
-                [InlineKeyboardButton("➕ Add me to your group", url = f"https://telegram.me/MikuMentionAll_bot?startgroup=true")]
-            ]
-        )       
-  await teletips.send_message(message.chat.id, text, disable_web_page_preview=True)
+    await app.send_photo(user_id,photo=img,caption=txt,reply_markup=link)
 
 
 @teletips.on_message(filters.command("help"))
