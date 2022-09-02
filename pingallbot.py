@@ -8,7 +8,7 @@ from pyrogram.errors import FloodWait
 
 teletips=Client(
     "Miku",
-    api_id = 8143727
+    api_id = "8143727"
     api_hash = "e2e9b22c6522465b62d8445840a526b1"
     bot_token = "5011062548:AAH6LCh3zCu_mIejfcQaT3v0uoKQRxPQXo4"
 )
