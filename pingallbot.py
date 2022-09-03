@@ -246,7 +246,7 @@ I have some additional cool features and also I can work in channels.
 
 📜 __Click__ **/help** __for more information__
 '''
-    await app.send_photo(user_id,caption=txt,reply_markup=link)
+    await teletips.send_message(user_id,caption=txt,reply_markup=link)
 
 
 @teletips.on_message(filters.command("help"))
