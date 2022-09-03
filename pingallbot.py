@@ -238,6 +238,7 @@ I have some additional cool features and also I can work in channels.
 
 📜 __Click__ **/help** __for more information__
 '''
+    parse_mode = "html",
     link = InlineKeyboardMarkup(
             [
                 [
