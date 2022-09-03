@@ -235,7 +235,7 @@ I have some additional cool features and also I can work in channels.
 
 📜 __Click__ **/help** __for more information__
 '''
-   await teletips.send_message(message.chat.id, txt, disable_web_page_preview=True)
+   await teletips.send_message(message.chat.id, text, disable_web_page_preview=True)
 
 
 @teletips.on_message(filters.command("help"))
