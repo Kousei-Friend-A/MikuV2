@@ -13,5 +13,5 @@ jobs:
       - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
         with:
           heroku_api_key: "1bbc7214-8ce5-414e-bd8f-12aa1ac90037"
-          heroku_app_name: "mikuv" #Must be unique in Heroku
+          heroku_app_name: "arcane-refuge-56282" #Must be unique in Heroku
           heroku_email: "manu.weeb016@gmail.com"
