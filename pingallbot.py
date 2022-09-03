@@ -1,12 +1,5 @@
-from pyrogram import Client, filters 
-from pyrogram.types import (
-    CallbackQuery,
-    ChatPermissions,
-    InlineKeyboardButton,
-    InlineKeyboardMarkup,
-    Message,
-    Update,
-)    
+from pyrogram import Client, filters
+from pyrogram.types import Message
 import os
 import asyncio
 from pyrogram import enums
@@ -231,29 +224,15 @@ async def bots(client, message):
   except FloodWait as e:
     await asyncio.sleep(e.value)
 
-@teletips.on_message(filters.private & filters.command(["start"]))
-async def startHandler(bot:Update, msg:Message):
-    botInfo = await bot.get_me()
-    await msg.reply_text(
-        "<b>📝How to Use me?</b>\
-        \n\t1. Add me to your Group & Request Logs Channel(Create a channel for requesting logs).\
-        \n\t2. Make me admin in both Channel & Group.\
-        \n\t3. Give permission to Post , Edit & Delete Messages.\
-        \n\t4. Now send Group ID & Channel ID in this format <code>/add GroupID ChannelID</code>.\
-        \nNow Bot is ready to be used.🚀",
-        parse_mode = "html",
-        reply_markup = InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "➕Add me to your Group.",
-                        url = f"https://telegram.me/RequestTracker_bot?startgroup=true"
-                    )
-                ]
-            ]
-        )
-    )
-    return
+@teletips.on_message(filters.command("start") & filters.private)
+async def start(client, message):   
+    txt = f'''Hi!! {message.from_user.mention},
+**I'm Miku A Simple Mention All Bot.** I can help you to get everyone's attention by mentioning all members in your chat.
+I have some additional cool features and also I can work in channels.
+
+📜 __Click__ **/help** __for more information__
+'''
+   await teletips.send_message(message.chat.id, txt, disable_web_page_preview=True)
 
 
 @teletips.on_message(filters.command("help"))
