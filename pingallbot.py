@@ -226,7 +226,8 @@ async def bots(client, message):
 
 @teletips.on_message(filters.command("start") & filters.private)
 async def start(client, message):   
-    text = f'''Hi!! {message.from_user.mention},
+    text = f'''
+Hi!! {message.from_user.mention},
 **I'm Miku A Simple Mention All Bot.** 
 
 I can help you to get everyone's attention by mentioning all members in your chat.
