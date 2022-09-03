@@ -43,7 +43,7 @@ async def everyone(client, message):
           if len(message.command) > 1:
             inputText = message.command[1]
           elif len(message.command) == 1:
-            inputText =     
+            inputText = ""    
           membersList = []
           async for member in teletips.get_chat_members(message.chat.id):
             if member.user.is_bot == True:
