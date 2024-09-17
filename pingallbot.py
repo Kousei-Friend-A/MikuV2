@@ -8,9 +8,9 @@ from pyrogram.errors import FloodWait
 
 teletips=Client(
     "Miku",
-    api_id = int(os.environ["API_ID"]),
-    api_hash = os.environ["API_HASH"],
-    bot_token = os.environ["BOT_TOKEN"]
+    api_id = int(os.environ["8143727"]),
+    api_hash = os.environ["e2e9b22c6522465b62d8445840a526b1"],
+    bot_token = os.environ["7070931882:AAFfjrAuCmHhdbMT8Nweo5vj1Je7gt7-oMY"]
 )
     
 chatQueue = []
